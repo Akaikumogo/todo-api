@@ -10,7 +10,9 @@ class TodoItem(BaseModel):
 
 todos = [
 ]
-
+@app.get("/")
+async def get():
+    return "OPPO NIGGA"
 @app.get("/todos")
 async def get_todos():
     return todos
