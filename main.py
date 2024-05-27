@@ -1,5 +1,6 @@
-from fastapi import FastAPI
+from typing import Union
 from pydantic import BaseModel
+from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -9,10 +10,13 @@ class TodoItem(BaseModel):
     completed: bool = False
 
 todos = [
+    
 ]
+
 @app.get("/")
-async def get():
-    return "OPPO NIGGA"
+def read_root():
+    return {"Hello": "OPPO nigga"}
+
 @app.get("/todos")
 async def get_todos():
     return todos
